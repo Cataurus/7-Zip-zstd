@@ -45,17 +45,17 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
           toolset: 16.0
-      - name: Compile
+      - name: Compile ${{ matrix.arch }}
         shell: cmd
         run: |
-          echo "Github ${{env.GITHUB_WORKSPACE}}"
-          set APPVEYOR_BUILD_FOLDER=${{env.ROOT_PATH}}
+          echo "Github %env.GITHUB_WORKSPACE%"
+          set APPVEYOR_BUILD_FOLDER=%env.ROOT_PATH%
           set CLOUD=TRUE
           set VC=16.0
           set PLATFORM=${{matrix.arch}}
           set Variable=${{matrix.subsys}}
           set DEBUG=${{ matrix.debug }}
-          echo "SUBSYS===>$SUBSYS"          
+          echo "SUBSYS===>%SUBSYS%"          
           echo "APPVEYOR_BUILD_FOLDER===>$APPVEYOR_BUILD_FOLDER"
           cd cpp
           ./build-it.ps1          
