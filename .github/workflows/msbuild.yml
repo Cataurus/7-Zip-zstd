@@ -48,7 +48,7 @@ jobs:
       - name: Compile ${{ matrix.arch }}
         shell: cmd
         run: |
-          set APPVEYOR_BUILD_FOLDER=${{env.ROOT_PATH}}
+          set APPVEYOR_BUILD_FOLDER=%cd%
           set CLOUD=TRUE
           set VC=16.0
           set PLATFORM=${{matrix.arch}}
@@ -60,7 +60,6 @@ jobs:
           echo "SUBSYS: %SUBSYS%"
           echo "Build: %DEBUG%"
           echo "GithubAction: %CLOUD%"
-          echo "pwd: %cd%"
           cd cpp
           build-it.cmd
       - name: Upload a Build Artifact
