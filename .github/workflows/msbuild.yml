@@ -61,5 +61,5 @@ jobs:
           Set-Variable PLATFORM ${{ matrix.arch }}
           Set-Variable SUBSYS ${{ matrix.subsys }}
           Set-Variable DEBUG ${{ matrix.debug }}
-          echo "===>$SUBSYS""
+          echo "===>$SUBSYS"
           ./build-it.ps1
