@@ -1,0 +1,1 @@
+Get-ChildItem -Path . -Recurse -Include o | Remove-Item -Recurse
