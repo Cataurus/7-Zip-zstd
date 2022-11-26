@@ -44,7 +44,7 @@ Write-Output ** Uebersicht der Variabeln ** >> $ERRFILE
 Write-Output ****************************** >> $ERRFILE
 Write-Output ""
 Get-Variable ROOT >> $ERRFILE
-Get-Variable ROOT_PATH >> $ERRFILE
+Get-Variable APPVEYOR_BUILD_FOLDER >> $ERRFILE
 Get-Variable SOURCEDIR >> $ERRFILE
 Get-Variable OUTDIR >> $ERRFILE
 Get-Variable ERRFILE >> $ERRFILE
