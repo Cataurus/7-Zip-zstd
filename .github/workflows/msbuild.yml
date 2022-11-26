@@ -45,7 +45,8 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
           toolset: 16.0
-      - name: Build something requiring CL.EXE
+      - name: Compile
+        shell: cmd
         run: |
           echo "Github ${{env.GITHUB_WORKSPACE}}"
           set APPVEYOR_BUILD_FOLDER=${{env.ROOT_PATH}}
