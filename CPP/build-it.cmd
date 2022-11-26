@@ -3,6 +3,17 @@
 set ROOT=%cd%\7zip
 set OUTDIR=%APPVEYOR_BUILD_FOLDER%\build\bin-%VC%-%PLATFORM%
 set ERRFILE=%APPVEYOR_BUILD_FOLDER%\build\bin-%VC%-%PLATFORM%.log
+
+if %DEBUG% == DEBUG
+(
+  set LFLAGS=/SUBSYSTEM:WINDOWS,%SUBSYS% /Debug
+  set CFLAGS=/7Z
+)
+else
+(
+  set LFLAGS=/SUBSYSTEM:WINDOWS,%SUBSYS%
+)
+
 set LFLAGS=/SUBSYSTEM:WINDOWS,%SUBSYS%
 set > %APPVEYOR_BUILD_FOLDER%\build\env-%VC%-%PLATFORM%.txt
 mkdir %OUTDIR%
@@ -19,7 +30,11 @@ copy %PLATFORM%\7za.dll %OUTDIR%\7za.dll
 
 cd %ROOT%\Bundles\Format7zF
 nmake %OPTS%
-IF %errorlevel% NEQ 0 echo "Error @ 7z.dll" >> %ERRFILE%
+IF %errorlevel% NEQ 0 
+(
+  echo "Error @ 7z.dll" >> %ERRFILE%
+  echo %error% >> %ERRFILE%
+)
 copy %PLATFORM%\7z.dll %OUTDIR%\7z.dll
 
 cd %ROOT%\UI\FileManager
