@@ -60,7 +60,8 @@ jobs:
           echo "SUBSYS: %SUBSYS%"
           echo "Build: %DEBUG%"
           echo "GithubAction: %CLOUD%"
-          echo "artifactPath=%APPVEYOR_BUILD_FOLDER%/build" >> $GITHUB_ENV
+          echo "%GITHUB_ENV%"
+          echo "artifactPath=%APPVEYOR_BUILD_FOLDER%/build" >> %GITHUB_ENV%
           cd cpp
           build-it.cmd
       - name: Upload a Build Artifact
