@@ -47,12 +47,15 @@ jobs:
           toolset: 16.0
       - name: Build something requiring CL.EXE
         run:
-          Set-Variable APPVEYOR_BUILD_FOLDER ${{env.GITHUB_WORKSPACE}}
+          Set-Variable APPVEYOR_BUILD_FOLDER ${{env.ROOT_PATH}}
+          $(get-location).Path Set-Variable TEST
           Set-Variable CLOUD TRUE
           Set-Variable VC 16.0
           Set-Variable PLATFORM ${{ matrix.arch }}
           Set-Variable SUBSYS ${{ matrix.subsys }}
           Set-Variable DEBUG ${{ matrix.debug }}
           echo "SUBSYS===>$SUBSYS"
+          echo "Test===>$TEST"
+          echo "APPVEYOR_BUILD_FOLDER===>$APPVEYOR_BUILD_FOLDER"
           cd cpp
           ./build-it.ps1
