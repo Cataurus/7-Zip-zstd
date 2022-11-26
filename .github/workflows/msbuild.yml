@@ -54,12 +54,12 @@ jobs:
           toolset: 16.0
       - name: Build something requiring CL.EXE
         run: |
-          set APPVEYOR_BUILD_FOLDER=$ROOT_PATH
+          Set-Variable APPVEYOR_BUILD_FOLDER $ROOT_PATH
           cd cpp
-          set CLOUD=TRUE
-          set VC=16.0
-          set PLATFORM=${{ matrix.arch }}
-          set SUBSYS=${{ matrix.subsys }}
-          set DEBUG=${{ matrix.debug }}
-          echo ===>$SUBSYS
+          Set-Variable CLOUD TRUE
+          Set-Variable VC 16.0
+          Set-Variable PLATFORM ${{ matrix.arch }}
+          Set-Variable SUBSYS ${{ matrix.subsys }}
+          Set-Variable DEBUG ${{ matrix.debug }}
+          echo "===>$SUBSYS""
           ./build-it.ps1
