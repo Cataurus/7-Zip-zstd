@@ -55,9 +55,10 @@ jobs:
       - name: Build something requiring CL.EXE
         run: |
           set APPVEYOR_BUILD_FOLDER=$ROOT_PATH
-          set CLOUD=TRUE
           cd cpp
+          set CLOUD=TRUE
           set VC=16.0
           set SUBSYS=${{ matrix.subsys }}
+          set DEBUG=${{ matrix.debug }}
           echo $SUBSYS
           ./build-it.ps1
