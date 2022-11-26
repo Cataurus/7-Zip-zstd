@@ -37,10 +37,6 @@ jobs:
             subsys: "5.01"
           - arch: x64
             subsys: "5.02"
-          - arch: x64_arm
-            subsys: "6.02"
-          - arch: x64_arm64
-            subsys: "6.02"
     steps:
       - uses: actions/checkout@v2
       - name: Add msbuild to PATH
