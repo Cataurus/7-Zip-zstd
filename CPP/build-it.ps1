@@ -12,6 +12,8 @@ function LogError
 
 Set-Variable ROOT $PWD\7zip
 
+mkdir $APPVEYOR_BUILD_FOLDER\build
+
 if ($DEBUG -eq "DEBUG")
 {
     Set-Variable OUTDIR $APPVEYOR_BUILD_FOLDER\build\bin-$PLATFORM-Debug
