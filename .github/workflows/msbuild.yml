@@ -61,3 +61,4 @@ jobs:
           echo "Build: %DEBUG%"
           echo "GithubAction: %CLOUD%"
           cd cpp
+          build-it.cmd
