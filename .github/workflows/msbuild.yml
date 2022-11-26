@@ -57,7 +57,8 @@ jobs:
           set PLATFORM=${{matrix.arch}}
           set SUBSYS=${{matrix.subsys}}
           set DEBUG=${{ matrix.debug }}
-                    
+          echo "********"          
           echo "APPVEYOR_BUILD_FOLDER: %APPVEYOR_BUILD_FOLDER%"
-          
+          echo "%PLATFORM%"
+          echo "%SUBSYS%"
           cd cpp          
