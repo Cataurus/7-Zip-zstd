@@ -48,7 +48,7 @@ jobs:
       - name: Build something requiring CL.EXE
         run:
           Set-Variable APPVEYOR_BUILD_FOLDER ${{env.ROOT_PATH}}
-          $(get-location).Path Set-Variable TEST
+          $(get-location).Path | Set-Variable TEST
           Set-Variable CLOUD TRUE
           Set-Variable VC 16.0
           Set-Variable PLATFORM ${{ matrix.arch }}
