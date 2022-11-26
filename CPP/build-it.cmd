@@ -1,10 +1,10 @@
 @echo off
 
 set ROOT=%cd%\7zip
-set OUTDIR=%APPVEYOR_BUILD_FOLDER%\bin-%VC%-%PLATFORM%
-set ERRFILE=%APPVEYOR_BUILD_FOLDER%\bin-%VC%-%PLATFORM%.log
+set OUTDIR=%APPVEYOR_BUILD_FOLDER%\build\bin-%VC%-%PLATFORM%
+set ERRFILE=%APPVEYOR_BUILD_FOLDER%\build\bin-%VC%-%PLATFORM%.log
 set LFLAGS=/SUBSYSTEM:WINDOWS,%SUBSYS%
-set > %APPVEYOR_BUILD_FOLDER%\env-%VC%-%PLATFORM%.txt
+set > %APPVEYOR_BUILD_FOLDER%\build\env-%VC%-%PLATFORM%.txt
 mkdir %OUTDIR%
 
 cd %ROOT%\Bundles\Format7zExtract
@@ -100,4 +100,3 @@ copy %PLATFORM%\7za.exe %OUTDIR%\7za.exe
 
 :ende
 cd %ROOT%\..
-
