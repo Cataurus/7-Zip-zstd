@@ -54,7 +54,7 @@ jobs:
           toolset: 16.0
       - name: Build something requiring CL.EXE
         run: |
-          Set-Variable APPVEYOR_BUILD_FOLDER $ROOT_PATH
+          Set-Variable APPVEYOR_BUILD_FOLDER .
           cd cpp
           Set-Variable CLOUD TRUE
           Set-Variable VC 16.0
