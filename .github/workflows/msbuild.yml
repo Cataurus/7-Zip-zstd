@@ -58,7 +58,8 @@ jobs:
           cd cpp
           set CLOUD=TRUE
           set VC=16.0
+          set PLATFORM=${{ matrix.arch }}
           set SUBSYS=${{ matrix.subsys }}
           set DEBUG=${{ matrix.debug }}
-          echo $SUBSYS
+          echo ===>$SUBSYS
           ./build-it.ps1
