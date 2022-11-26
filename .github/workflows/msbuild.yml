@@ -49,6 +49,7 @@ jobs:
         shell: cmd
         run: |
           echo "Github ${{env.GITHUB_WORKSPACE}}"
+          echo "Plattform: ${{matrix.arch}}"
           set APPVEYOR_BUILD_FOLDER=${{env.ROOT_PATH}}
           set CLOUD=TRUE
           set VC=16.0
