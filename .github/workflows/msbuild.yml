@@ -91,6 +91,10 @@ jobs:
 
           cd %ROOT%\Bundles\Format7zF
           nmake %OPTS%
+          IF (%errorlevel% NEQ 0) {
+            echo "Error @ 7z.dll" >> %ERRFILE%
+            exit -1  
+          }
           copy %PLATFORM%\7z.dll %OUTDIR%\7z.dll
 
           cd %ROOT%\UI\FileManager
